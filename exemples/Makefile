@@ -20,5 +20,7 @@ tsp: TSP.cpp
 clique: clique.cpp
 	$(CPP) $(CARGS) -o clique clique.cpp -I$(INC) $(CPPLIB) -lm
 
+clique_py: clique.py
+	gurobi.sh clique.py
 clean:
 	rm -f mochila mip1_c tsp clique *.o

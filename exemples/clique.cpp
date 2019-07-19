@@ -22,7 +22,13 @@ int main(int   argc,     char *argv[])
   ler_arquivo("input3", n, G);
   resolve(n,G);
 
-  return 0; // para a puta que pariu!!!!
+  //deletar os ponteiros
+  for (unsigned i=0; i<n; ++i){
+    free(G[i]);
+  }
+  free(G);
+
+  return 0; 
 }
 
 void ler_arquivo(string arq, int& n, int**& G){
