@@ -50,6 +50,9 @@ void ler_arquivo(string arq, int& n, int**& G){
       //cria a aresta i,j e j,i
       G[i-1][j-1] = G[j-1][i-1] = 1;
     }
+
+    arquivo.close();
+    
   }
   catch(const exception& e)
   {
@@ -76,7 +79,7 @@ void resolve(const int n, int** G){
     //criando as variaveis e guardando elas no vetor
     X[i] = model.addVar(0, 1, 1, GRB_BINARY, "x_"+to_string(i));
     //usando vector
-    //X.pushback(model.addVar(0, 1, 1, GRB_BINARY, "x_"+to_string(i)));
+    //X.push_back(model.addVar(0, 1, 1, GRB_BINARY, "x_"+to_string(i)));
   }
 
   //criando as restrições  

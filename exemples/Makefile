@@ -14,13 +14,20 @@ mochila: mochila.c
 mip: mip1_c.c 
 	$(CPP) $(CARGS) -o mip1_c mip1_c.c -I$(INC) $(CLIB) -lm
 
-tsp: TSP.cpp
-	$(CPP) $(CARGS) -o tsp TSP.cpp -I$(INC) $(CLIB) -lm
+tsp: tsp.cpp
+	$(CPP) $(CARGS) -o tsp tsp.cpp -I$(INC) $(CLIB) -lm
+
+tsp2: tsp2.cpp
+	$(CPP) $(CARGS) -o tsp2 tsp2.cpp -I$(INC) $(CPPLIB) -lm
 
 clique: clique.cpp
 	$(CPP) $(CARGS) -o clique clique.cpp -I$(INC) $(CPPLIB) -lm
 
 clique_py: clique.py
 	gurobi.sh clique.py
+
+tsp_py: tsp.py
+	gurobi.sh tsp.py
+
 clean:
-	rm -f mochila mip1_c tsp clique *.o
+	rm -f mochila mip1_c tsp tsp2 clique *.o *.log *.lp
