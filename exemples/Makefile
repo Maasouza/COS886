@@ -23,6 +23,11 @@ tsp2: tsp2.cpp
 clique: clique.cpp
 	$(CPP) $(CARGS) -o clique clique.cpp -I$(INC) $(CPPLIB) -lm
 
+tu: tu.cpp
+	$(CPP) $(CARGS) -o tu tu.cpp -I$(INC) $(CPPLIB) -lm
+	./tu;
+	python sh.py;
+	
 clique_py: clique.py
 	gurobi.sh clique.py
 
@@ -30,4 +35,4 @@ tsp_py: tsp.py
 	gurobi.sh tsp.py
 
 clean:
-	rm -f mochila mip1_c tsp tsp2 clique *.o *.log *.lp
+	rm -f mochila mip1_c tsp tu tu2 tsp2 clique *.o *.log *.lp *.out

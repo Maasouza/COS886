@@ -74,7 +74,7 @@ def resolve(G):
         model.setAttr("ModelSense", GRB.MINIMIZE)
         model.write("tsp_py.lp")
         model.optimize()
-        
+        print(model.runtime)
 
         print("\n\nSolucao otima - :" + str(model.objVal))
         print("Arestas")

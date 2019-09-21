@@ -13,6 +13,8 @@ mochila: mochila.c
 
 mip: mip1_c.c 
 	$(CPP) $(CARGS) -o mip1_c mip1_c.c -I$(INC) $(CLIB) -lm
+mincut: mincut.cpp
+	$(CPP) $(CARGS) -o mincut mincut.cpp -I$(INC) $(CLIB) -lm
 
 tsp: TSP.cpp
 	$(CPP) $(CARGS) -o tsp TSP.cpp -I$(INC) $(CLIB) -lm
